@@ -9,13 +9,13 @@ const DATABASE_URL =
   process.env.DATABASE_URL === undefined ? databasePath : process.env.DATABASE_URL
 module.exports = {
   VERSION: require('./package.json').version,
-  SESSION_ID: (process.env.SESSION_ID || '').trim(),
+  SESSION_ID: "levanter_61ea47b0b568541c8a21ed2e2deafbc73"
   DATABASE:
     DATABASE_URL === databasePath
       ? new Sequelize({
           dialect: 'sqlite',
           storage: DATABASE_URL,
-          logging: false,
+          logging: true,
         })
       : new Sequelize(DATABASE_URL, {
           dialect: 'postgres',
@@ -32,9 +32,9 @@ module.exports = {
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME,
   HEROKU_API_KEY: process.env.HEROKU_API_KEY,
   BRANCH: 'master',
-  STICKER_PACKNAME: process.env.STICKER_PACKNAME || '❤️,LyFE',
+  STICKER_PACKNAME: process.env.STICKER_PACKNAME || '❤️,abcdefg,'
   ALWAYS_ONLINE: process.env.ALWAYS_ONLINE,
-  LOG_MSG: toBool(process.env.LOG_MSG) || false,
+  LOG_MSG: toBool(process.env.LOG_MSG) || true,
   RMBG_KEY: process.env.RMBG_KEY || 'null',
   BAILEYS_LOG_LVL: process.env.BAILEYS_LOG_LVL || 'silent',
   LANG: (process.env.LANGUAG || 'en').toLowerCase(),
